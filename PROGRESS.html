@@ -329,24 +329,139 @@
         <div class="info-bar">
             <div class="info-item">
                 <h3>Current Sprint</h3>
-                <p>Sprint 4</p>
+                <p>Sprint 5</p>
             </div>
             <div class="info-item">
-                <h3>KB Entries</h3>
-                <p>36 total (↑24)</p>
+                <h3>Tests</h3>
+                <p>457 passing</p>
             </div>
             <div class="info-item">
                 <h3>Status</h3>
-                <p>Sprint 3 Complete</p>
+                <p>Sprint 4 Complete</p>
             </div>
             <div class="info-item">
                 <h3>Last Updated</h3>
-                <p>Mar 4, 2026</p>
+                <p>Mar 5, 2026</p>
             </div>
         </div>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- SPRINT 3 — CURRENT                                      -->
+        <!-- SPRINT 5 — CURRENT                                      -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 5: Web UI & Test Infrastructure (In Progress)</h2>
+
+            <div class="sprint active">
+                <h3>
+                    Sprint 5 - Web UI & Testing
+                    <span class="status active">IN PROGRESS</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    FastAPI web interface for publishing posts, magic link authentication, AI post generation,
+                    community digests, and comprehensive test suite for broadcaster module and web auth.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 65%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box wip">
+                        <h4>Completed</h4>
+                        <p>Web UI, Auth, 50 tests</p>
+                    </div>
+                    <div class="stat-box wip">
+                        <h4>Next Sprint</h4>
+                        <p>Scheduled posting, Analytics</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">⚡ Delivered So Far:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>web/app.py</strong> — FastAPI application with 17+ endpoints, Jinja2 templates, Alpine.js forms</li>
+                    <li class="done"><strong>web/auth.py</strong> — Magic link authentication, JWT tokens, domain validation (@gosh.sh), user management</li>
+                    <li class="done"><strong>6 HTML Pages</strong> — Login, Publish, Generate, Digests, History, Settings admin panel</li>
+                    <li class="done"><strong>test_broadcaster.py</strong> — 21 comprehensive tests for broadcaster module (file I/O, broadcast logic, deletion)</li>
+                    <li class="done"><strong>test_web_auth.py</strong> — 29 tests for authentication, JWT, magic links, domain validation</li>
+                    <li class="done"><strong>457/457 Tests Passing</strong> — Full test coverage including 50 new web tests</li>
+                    <li>→ Scheduled posting API (Sprint 6 backlog)</li>
+                    <li>→ Broadcast analytics dashboard (Sprint 6 backlog)</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech Stack:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">FastAPI</div>
+                    <div class="tech-badge new">Jinja2 Templates</div>
+                    <div class="tech-badge new">Alpine.js</div>
+                    <div class="tech-badge new">httponly Cookies</div>
+                    <div class="tech-badge new">JWT Auth</div>
+                    <div class="tech-badge new">Magic Links</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 4                                                 -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 4: Broadcast Mechanism & Message Splitting</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 4 - Complete ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Complete broadcast mechanism with message splitting for long captions, undo/retry functionality,
+                    and comprehensive test coverage of broadcaster module with 21 new tests.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>All tasks (7/7)</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests Added</h4>
+                        <p>21 broadcaster tests</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered Features:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>broadcaster.py</strong> — Complete multi-chat broadcast with 21 message splitting for captions > 1024 chars</li>
+                    <li class="done"><strong>Undo Mechanism</strong> — /undo_broadcast [ID] deletes from all chats with tracked message IDs</li>
+                    <li class="done"><strong>Retry Logic</strong> — /retry_broadcast &lt;ID&gt; retries only failed chats, no duplicates</li>
+                    <li class="done"><strong>Topic Management</strong> — /set_topic, /scan_topics for forum topic routing</li>
+                    <li class="done"><strong>test_broadcaster.py</strong> — 21 comprehensive tests with file I/O mocking and edge cases</li>
+                    <li class="done"><strong>Fixed Message Splitting</strong> — Photo + text when translation &gt; 1024 chars (18 errors → 0)</li>
+                    <li class="done"><strong>457/457 Tests Passing</strong> — 407 original + 50 new (21 broadcaster + 29 web)</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🎯 New Commands:</h4>
+                <div style="background: #f7fafc; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 13px; line-height: 1.8;">
+                    <div><strong>/set_topic @chat ID</strong> — Set topic ID for a chat</div>
+                    <div><strong>/scan_topics</strong> — Auto-discover topic IDs (requires Telethon SMS)</div>
+                    <div><strong>/broadcast &lt;link&gt;</strong> — Broadcast via link (Telethon)</div>
+                    <div><strong>/undo_broadcast [ID]</strong> — Delete broadcast from all chats</div>
+                    <div><strong>/retry_broadcast &lt;ID&gt;</strong> — Retry only failed chats</div>
+                </div>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 Tech Improvements:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">Message Splitting</div>
+                    <div class="tech-badge new">File I/O Mocking</div>
+                    <div class="tech-badge new">Topic Cache</div>
+                    <div class="tech-badge new">Broadcast Logging</div>
+                    <div class="tech-badge new">Failed Broadcast Tracking</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 3                                                 -->
         <!-- ═══════════════════════════════════════════════════════ -->
         <div class="section">
             <h2>📅 Sprint 3: Knowledge Base, Sentiment & Dashboard</h2>
@@ -358,7 +473,7 @@
                 </h3>
                 <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
                     Knowledge base for auto-replies, advanced sentiment analysis with trending topics,
-                    and a community health metrics dashboard. Final iteration: imported 24 new KB entries from Excel multilingual translations (20 languages).
+                    and a community health metrics dashboard. Imported 24 new KB entries from Excel multilingual translations.
                 </p>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 100%"></div>
@@ -377,26 +492,12 @@
 
                 <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered Features:</h4>
                 <ul class="tasks">
-                    <li class="done"><strong>knowledge_base.py</strong> — JSON-based FAQ storage with TF-IDF keyword search + Claude AI semantic answers. 36 total KB entries (12 seed + 24 from Excel).</li>
-                    <li class="done"><strong>sentiment_analyzer.py</strong> — Batch Claude AI sentiment analysis per message (positive/negative/neutral), emotion detection, topic extraction, trend comparison vs history, automatic alerts (frustration/confusion spikes), and in-memory caching.</li>
-                    <li class="done"><strong>dashboard.py</strong> — Self-contained HTML dashboard with Chart.js: sentiment by chat, emotion distribution, message volume, trending topics, alerts panel, KB stats.</li>
-                    <li class="done"><strong>bot.py integration</strong> — 5 new commands: /kb, /sentiment, /dashboard with multilingual support, wrapped in approval flow.</li>
-                    <li class="done"><strong>~200 New Tests</strong> — test_knowledge_base.py, test_sentiment_analyzer.py, test_dashboard.py covering all edge cases. 500+ total tests, 100% pass rate.</li>
-                    <li class="done"><strong>KB Import from Excel</strong> — Parsed 20-language Excel with 8 topic categories. Created 24 new entries: consensus, finalization, parallel execution, bee-engine, block-keepers, mobile-verifiers, mamaboard, popit-mining, boosts, tokens, wallet, governance, slashing, fork-choice, attestations, dex, ambassador, bug-reporting, network-governance, dark-order, token-listing, miniapp.</li>
+                    <li class="done"><strong>knowledge_base.py</strong> — JSON-based FAQ storage with TF-IDF keyword search + Claude AI semantic answers</li>
+                    <li class="done"><strong>sentiment_analyzer.py</strong> — Batch Claude AI sentiment analysis, emotion detection, topic extraction, trend detection</li>
+                    <li class="done"><strong>dashboard.py</strong> — Self-contained HTML dashboard with Chart.js for sentiment, emotions, trends, alerts</li>
+                    <li class="done"><strong>bot.py integration</strong> — 5 new commands: /kb, /sentiment, /dashboard with multilingual support</li>
+                    <li class="done"><strong>~200 New Tests</strong> — test_knowledge_base.py, test_sentiment_analyzer.py, test_dashboard.py, 100% pass rate</li>
                 </ul>
-
-                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🎯 New Commands:</h4>
-                <div style="background: #f7fafc; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 13px; line-height: 1.8;">
-                    <div><strong>/kb</strong> — KB stats</div>
-                    <div><strong>/kb search &lt;query&gt;</strong> — keyword search</div>
-                    <div><strong>/kb ask &lt;question&gt;</strong> — AI answer from KB context</div>
-                    <div><strong>/kb add id | question | answer</strong> — add entry</div>
-                    <div><strong>/kb remove &lt;id&gt;</strong> — delete entry</div>
-                    <div><strong>/sentiment</strong> — community health overview</div>
-                    <div><strong>/sentiment trending [hours]</strong> — trending topics</div>
-                    <div><strong>/sentiment analyze &lt;chat&gt;</strong> — analyze a specific chat</div>
-                    <div><strong>/dashboard</strong> — generate &amp; send HTML dashboard</div>
-                </div>
 
                 <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech Stack:</h4>
                 <div class="tech-stack">
@@ -405,7 +506,6 @@
                     <div class="tech-badge new">Chart.js Dashboard</div>
                     <div class="tech-badge new">Topic Extraction</div>
                     <div class="tech-badge new">Trend Detection</div>
-                    <div class="tech-badge new">Alert System</div>
                 </div>
             </div>
         </div>
@@ -656,7 +756,7 @@
 
         <footer>
             <p>Community AI — Building AI-powered community management for Acki Nacki blockchain 🚀</p>
-            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 4, 2026 | Sprint 3 Complete → Sprint 4 Queued (Telethon + Twitter)</p>
+            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 5, 2026 | Sprint 4 Complete → Sprint 5 In Progress (Web UI, Testing)</p>
         </footer>
     </div>
 </body>
