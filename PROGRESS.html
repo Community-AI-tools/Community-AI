@@ -329,15 +329,15 @@
         <div class="info-bar">
             <div class="info-item">
                 <h3>Current Sprint</h3>
-                <p>Sprint 10</p>
+                <p>Sprint 11</p>
             </div>
             <div class="info-item">
                 <h3>Tests</h3>
-                <p>538 passing</p>
+                <p>520 passing</p>
             </div>
             <div class="info-item">
                 <h3>Status</h3>
-                <p>Sprint 9 Complete</p>
+                <p>Sprint 10 Complete</p>
             </div>
             <div class="info-item">
                 <h3>Last Updated</h3>
@@ -346,19 +346,19 @@
         </div>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- SPRINT 10 — CURRENT                                     -->
+        <!-- SPRINT 11 — CURRENT                                     -->
         <!-- ═══════════════════════════════════════════════════════ -->
         <div class="section">
-            <h2>📅 Sprint 10: RAG & Custom Chat Analysis (In Progress)</h2>
+            <h2>📅 Sprint 11: Acki Nacki Brain, SMM Tools & Infrastructure (In Progress)</h2>
 
             <div class="sprint active">
                 <h3>
-                    Sprint 10 - RAG & Custom Chat Analysis
+                    Sprint 11 - Acki Nacki Brain, SMM Tools & Infrastructure
                     <span class="status active">IN PROGRESS</span>
                 </h3>
                 <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
-                    Complete custom digest feature, AI Q&A bot with hybrid search (BM25 + semantic), scheduler redesign,
-                    analytics overhaul with AI insights, engagement bot, and Web UI redesign with security hardening.
+                    Build Acki Nacki knowledge base with prompt caching, launch SMM tools suite, implement hybrid search (BM25 + embeddings),
+                    and add circuit breaker pattern for API resilience.
                 </p>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 5%"></div>
@@ -367,26 +367,83 @@
                 <div class="stats">
                     <div class="stat-box wip">
                         <h4>Status</h4>
-                        <p>Finalize testing</p>
+                        <p>Planning phase</p>
                     </div>
                     <div class="stat-box wip">
                         <h4>Baseline Tests</h4>
-                        <p>538 passing</p>
+                        <p>520 passing</p>
                     </div>
                 </div>
 
-                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">⚡ Planned Tasks (Priority Order):</h4>
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">⚡ Planned Tasks:</h4>
                 <ul class="tasks">
-                    <li>→ <strong>#62 Custom Digest</strong> — Finalize testing: username/URL → Telethon reads → Claude analyzes + Q&A follow-ups</li>
-                    <li>→ <strong>#63 AI Q&A Bot</strong> — RAG with BM25 + semantic search (sentence-transformers), auto-reply mode in chats</li>
-                    <li>→ <strong>#64 Scheduler Redesign</strong> — Visual calendar + preview + drag-to-reschedule, editing/deletion of scheduled posts</li>
-                    <li>→ <strong>#66 Activity Stats</strong> — User rankings, wordcloud, topic extraction in digests (top users, engagement metrics)</li>
-                    <li>→ <strong>#65 Analytics Overhaul</strong> — Multi-period filters, AI-powered insights & recommendations from Claude</li>
-                    <li>→ <strong>#67 Engagement Bot</strong> — Quizzes, fun facts, badge system for community chats (2-3 activities/day)</li>
-                    <li>→ <strong>#33 Scheduled Digest Delivery</strong> — Auto-generation by cron, email delivery integration</li>
-                    <li>→ <strong>#70 Web UI Redesign</strong> — "Blockchain + AI" aesthetic: gradients, glassmorphism, dark mode, responsive</li>
-                    <li>→ <strong>#71-74 Security</strong> — CSRF protection, file upload validation, CSP headers, Pydantic v2 input validation</li>
+                    <li>→ <strong>#68 Acki Nacki Brain</strong> — Collect docs/whitepaper/blog → structured JSON KB → prompt caching → RAG integration</li>
+                    <li>→ <strong>#61 SMM Tools</strong> — New /smm-tools section: ToV analysis, content calendar, competitor analysis, post series generator</li>
+                    <li>→ <strong>#75 Hybrid Search</strong> — BM25 + sentence-transformers (multilingual-MiniLM) + chromadb for KB</li>
+                    <li>→ <strong>#77 Circuit Breaker</strong> — Auto-disable on error series (Telegram/Twitter/Claude API) with exponential backoff</li>
+                    <li>→ <strong>#76 Prompt Caching</strong> — Cache system prompts for RAG/digests to reduce API costs by 90%</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 10 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 10: Engagement Bot, Digests & Security Hardening</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 10 - Engagement, Digests & Security ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Engagement bot with quizzes and badges, scheduled digest delivery with activity stats, Web UI redesign ("Blockchain + AI" aesthetic),
+                    and comprehensive security hardening (CSRF, file validation, CSP, Pydantic v2). 14 tasks completed.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>14 tasks ✅</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>520 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#67 Engagement Bot</strong> — Quizzes, fun facts, badges in Beginner/Ambassador/Moderator chats, 2-3 activities/day via Claude Haiku</li>
+                    <li class="done"><strong>#33 Scheduled Digest Delivery</strong> — digest_schedule.py with cron config, targets, time ranges, multi-target delivery via Telegram bot</li>
+                    <li class="done"><strong>#64 Scheduler Redesign</strong> — Mini-calendar, 3 creation modes, live TG preview, edit modal with PATCH API</li>
+                    <li class="done"><strong>#66 Activity Stats</strong> — User rankings, word cloud (CSS), media count, peak hour analytics in digests</li>
+                    <li class="done"><strong>#65 Analytics Redesign</strong> — Period filters, Claude AI Insights button, historical broadcast analysis</li>
+                    <li class="done"><strong>#60 Bot Message Publishing</strong> — Fixed topic auto-discovery via Telethon, proper routing to forum topics</li>
+                    <li class="done"><strong>#24 Bot Inline Menu</strong> — 10 inline buttons replacing text commands (approve/reject/skip/edit flows)</li>
+                    <li class="done"><strong>#62 Custom Digest</strong> — Username/URL → Telethon reads → Claude analyzes with follow-up Q&A</li>
+                    <li class="done"><strong>#63 AI Q&A Bot</strong> — RAG with BM25 + KB, auto-reply mode in community chats with knowledge base integration</li>
+                    <li class="done"><strong>#70 Web UI Redesign</strong> — Blockchain+AI aesthetic (gradient brand, nav pills, card-glow, status-dot animations)</li>
+                    <li class="done"><strong>#71 CSRF Protection</strong> — HMAC tokens + auto-inject middleware on all forms</li>
+                    <li class="done"><strong>#72 File Upload Validation</strong> — Magic bytes checking, MIME type validation, upload sandbox</li>
+                    <li class="done"><strong>#73 Security Headers</strong> — CSP, X-Frame-Options, X-Content-Type-Options middleware in FastAPI</li>
+                    <li class="done"><strong>#74 Pydantic v2 Models</strong> — Strict input validation on all API endpoints</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">Claude Haiku</div>
+                    <div class="tech-badge new">APScheduler cron</div>
+                    <div class="tech-badge new">Blockchain+AI UI</div>
+                    <div class="tech-badge new">fastapi-csrf-protect</div>
+                    <div class="tech-badge new">python-magic</div>
+                    <div class="tech-badge new">Pydantic v2</div>
+                    <div class="tech-badge new">CSS animations</div>
+                </div>
             </div>
         </div>
 
@@ -980,7 +1037,7 @@
 
         <footer>
             <p>Community AI — Building AI-powered community management for Acki Nacki blockchain 🚀</p>
-            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 10, 2026 | Sprint 9 Complete (Topic Routing, Bot Resilience) → Sprint 10 In Progress (RAG, Custom Chat Analysis, Security Hardening)</p>
+            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 10, 2026 | Sprint 10 Complete (Engagement, Digests, Security) → Sprint 11 In Progress (Acki Nacki Brain, SMM Tools, Infrastructure)</p>
         </footer>
     </div>
 </body>
