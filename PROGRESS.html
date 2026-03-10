@@ -329,73 +329,456 @@
         <div class="info-bar">
             <div class="info-item">
                 <h3>Current Sprint</h3>
-                <p>Sprint 3</p>
+                <p>Sprint 10</p>
             </div>
             <div class="info-item">
-                <h3>Tests Passing</h3>
-                <p>500+ ✓</p>
+                <h3>Tests</h3>
+                <p>538 passing</p>
             </div>
             <div class="info-item">
                 <h3>Status</h3>
-                <p>In Progress</p>
+                <p>Sprint 9 Complete</p>
             </div>
             <div class="info-item">
                 <h3>Last Updated</h3>
-                <p>Mar 4, 2026</p>
+                <p>Mar 10, 2026</p>
             </div>
         </div>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- SPRINT 3 — CURRENT                                      -->
+        <!-- SPRINT 10 — CURRENT                                     -->
         <!-- ═══════════════════════════════════════════════════════ -->
         <div class="section">
-            <h2>📅 Sprint 3: Knowledge Base, Sentiment & Dashboard</h2>
+            <h2>📅 Sprint 10: RAG & Custom Chat Analysis (In Progress)</h2>
 
             <div class="sprint active">
                 <h3>
-                    Sprint 3 — In Progress ⚡
-                    <span class="status wip">IN PROGRESS</span>
+                    Sprint 10 - RAG & Custom Chat Analysis
+                    <span class="status active">IN PROGRESS</span>
                 </h3>
                 <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
-                    Knowledge base for auto-replies, advanced sentiment analysis with trending topics,
-                    and a community health metrics dashboard.
+                    Complete custom digest feature, AI Q&A bot with hybrid search (BM25 + semantic), scheduler redesign,
+                    analytics overhaul with AI insights, engagement bot, and Web UI redesign with security hardening.
                 </p>
                 <div class="progress-bar">
-                    <div class="progress-fill" style="width: 85%"></div>
+                    <div class="progress-fill" style="width: 5%"></div>
                 </div>
 
                 <div class="stats">
                     <div class="stat-box wip">
-                        <h4>Completed</h4>
-                        <p>5/5 modules</p>
+                        <h4>Status</h4>
+                        <p>Finalize testing</p>
                     </div>
                     <div class="stat-box wip">
-                        <h4>New Tests</h4>
-                        <p>~200 tests</p>
+                        <h4>Baseline Tests</h4>
+                        <p>538 passing</p>
                     </div>
                 </div>
 
-                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">⚡ Delivered Features:</h4>
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">⚡ Planned Tasks (Priority Order):</h4>
                 <ul class="tasks">
-                    <li class="done"><strong>knowledge_base.py</strong> — JSON-based FAQ storage with TF-IDF keyword search + Claude AI semantic answers. 12 seeded Acki Nacki FAQ entries.</li>
-                    <li class="done"><strong>sentiment_analyzer.py</strong> — Batch Claude AI sentiment analysis per message (positive/negative/neutral), emotion detection, topic extraction, trend comparison vs history, and automatic alerts (frustration, confusion spikes).</li>
-                    <li class="done"><strong>dashboard.py</strong> — Self-contained HTML dashboard with Chart.js: sentiment by chat, emotion distribution, message volume, trending topics, alerts panel, KB stats.</li>
-                    <li class="done"><strong>bot.py integration</strong> — 3 new commands: /kb, /sentiment, /dashboard wired into the existing approval flow.</li>
-                    <li class="done"><strong>~200 New Tests</strong> — test_knowledge_base.py, test_sentiment_analyzer.py, test_dashboard.py covering all edge cases.</li>
+                    <li>→ <strong>#62 Custom Digest</strong> — Finalize testing: username/URL → Telethon reads → Claude analyzes + Q&A follow-ups</li>
+                    <li>→ <strong>#63 AI Q&A Bot</strong> — RAG with BM25 + semantic search (sentence-transformers), auto-reply mode in chats</li>
+                    <li>→ <strong>#64 Scheduler Redesign</strong> — Visual calendar + preview + drag-to-reschedule, editing/deletion of scheduled posts</li>
+                    <li>→ <strong>#66 Activity Stats</strong> — User rankings, wordcloud, topic extraction in digests (top users, engagement metrics)</li>
+                    <li>→ <strong>#65 Analytics Overhaul</strong> — Multi-period filters, AI-powered insights & recommendations from Claude</li>
+                    <li>→ <strong>#67 Engagement Bot</strong> — Quizzes, fun facts, badge system for community chats (2-3 activities/day)</li>
+                    <li>→ <strong>#33 Scheduled Digest Delivery</strong> — Auto-generation by cron, email delivery integration</li>
+                    <li>→ <strong>#70 Web UI Redesign</strong> — "Blockchain + AI" aesthetic: gradients, glassmorphism, dark mode, responsive</li>
+                    <li>→ <strong>#71-74 Security</strong> — CSRF protection, file upload validation, CSP headers, Pydantic v2 input validation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 9 — COMPLETED                                    -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 9: Topic Routing & Telegram Bot Resilience</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 9 - Topic Routing & Bot Resilience ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Critical fix for Telegram broadcasting: auto-discover forum topic IDs via Telethon, populate persistent cache,
+                    fix routing to send messages to correct topics instead of main chat, add network resilience, and begin custom digest implementation.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>4 major fixes ✅</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>538 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#60 Topic Routing Fix</strong> — Telethon GetForumTopicsRequest integration to auto-discover forum topic IDs across 22 chats, populate topic_cache.json (21/22 discovered), fix broadcaster.py routing via message_thread_id parameter</li>
+                    <li class="done"><strong>Network Resilience</strong> — Added error_handler() for TimedOut and NetworkError exceptions, logs at DEBUG level to prevent spam during network fluctuations</li>
+                    <li class="done"><strong>Topic Initialization Optimization</strong> — Moved from synchronous asyncio.run() to async job_queue.run_once() to initialize topics once at bot startup without blocking event loop</li>
+                    <li class="done"><strong>#62 Custom Digest (Code Complete)</strong> — Implemented _parse_chat_username(), generate_custom_chat_digest(), answer_digest_question() in digest_generator.py; added bot handlers for /digest_custom with username input and Q&A flow</li>
+                    <li class="done"><strong>topic_cache.json Persistence</strong> — Fallback handling when GetForumTopicsRequest unavailable (older Telethon), expanded NEWS_TOPIC_KEYWORDS for multilingual detection (Arabic, Farsi, etc.)</li>
+                    <li class="done"><strong>ChatReader Public API</strong> — Added public property accessor for Telethon client to replace direct access to private _client attribute</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">Telethon GetForumTopicsRequest</div>
+                    <div class="tech-badge new">Topic Cache Persistence</div>
+                    <div class="tech-badge new">APScheduler job_queue</div>
+                    <div class="tech-badge new">Network Error Handling</div>
+                    <div class="tech-badge new">Multilingual Keyword Matching</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 9 — PREVIOUS (ARCHIVED)                          -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 9: SMM Tools, RAG & Security Hardening (Archived - Reprioritized)</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 9 (Archived) - Original Feature Backlog
+                    <span class="status completed">REPRIORITIZED</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Original Sprint 9 scope was reprioritized: critical topic routing fix moved to actual Sprint 9,
+                    and planned features redistributed into Sprint 10 with user-defined task priority order.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 8 — COMPLETED                                    -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 8: Onboarding, UX & Monitoring</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 8 - Onboarding, UX & Monitoring ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    First-run onboarding wizard with tone-of-voice analysis, brand style via brandbook URL,
+                    and knowledge base import from files/URLs. Foundation for personalized content generation.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>1 major task ✅</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>538 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#20 Onboarding Wizard</strong> — 3-step wizard: (1) ToV via existing posts analysis, (2) Brand style via URL brandbook + color picker, (3) KB import (text/file/URL with Claude parsing)</li>
+                    <li class="done"><strong>Brand Analysis</strong> — analyze_brandbook(url) fetches & analyzes URL with Claude for tone, audience, values, colors</li>
+                    <li class="done"><strong>KB Import Engine</strong> — Parses CSV/JSON/TXT files + extracts Q&A from URLs using Claude</li>
+                    <li class="done"><strong>Alpine.js Integration</strong> — Tabbed UI for KB import modes, drag-drop file upload, real-time validation</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">httpx async</div>
+                    <div class="tech-badge new">HTML stripping</div>
+                    <div class="tech-badge new">DictReader CSV</div>
+                    <div class="tech-badge new">FormData multipart</div>
+                    <div class="tech-badge new">slowapi rate limits</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 7 — COMPLETED                                    -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 7: Security, Resilience & API</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 7 - Security, Resilience & API ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    All critical and important backlog items closed: retry logic with exponential backoff,
+                    API rate limiting, JWT refresh tokens, Twitter preview, history search/filter,
+                    batch publish API, webhook intake, DB indexes, and structured logging.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>10 tasks ✅</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>538 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#42 Retry Logic</strong> — Exponential backoff 30s/2m/10m for Telegram + Twitter in publishers.py</li>
+                    <li class="done"><strong>#43 API Rate Limiting</strong> — slowapi: auth 5/min, publish 20/min, generate 10/min, schedule 30/min</li>
+                    <li class="done"><strong>#44 Refresh Tokens</strong> — Access token 15min + refresh token 7 days; /api/auth/refresh endpoint; auto-renew every 12min in browser</li>
+                    <li class="done"><strong>#45 Content Preview</strong> — Live Twitter preview card with 280-char counter on /publish page</li>
+                    <li class="done"><strong>#46 History Search</strong> — Full-text, date range, channel, status filters + pagination in /history</li>
+                    <li class="done"><strong>#47 Batch Publish API</strong> — POST /api/posts/batch — up to 10 posts per request</li>
+                    <li class="done"><strong>#48 Webhook Intake</strong> — POST /api/webhooks/ingest → publish immediately or schedule; WEBHOOK_SECRET auth</li>
+                    <li class="done"><strong>#50 DB Indexes</strong> — SQLAlchemy Index on broadcast_id, created_at, chat_username, status, publish_at</li>
+                    <li class="done"><strong>#52 Structured Logging</strong> — HTTP middleware logs method/path/status/duration; key=value formatter</li>
+                    <li class="done"><strong>#41 Scheduler Worker</strong> — Already implemented in previous sprint (scheduler_tick every 60s)</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">slowapi</div>
+                    <div class="tech-badge new">Refresh Tokens</div>
+                    <div class="tech-badge new">Exponential Backoff</div>
+                    <div class="tech-badge new">Webhook Intake</div>
+                    <div class="tech-badge new">DB Indexes</div>
+                    <div class="tech-badge new">HTTP Middleware</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 6 — COMPLETED                                    -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 6: Scheduled Posting, Analytics & Docker</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 6 - Scheduled Posting, Analytics & Docker ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Full scheduling UI, analytics dashboard with Chart.js, parallel asyncio broadcasting,
+                    video support, multi-image albums, PostgreSQL infrastructure, audit log,
+                    Docker containerization, and complete test coverage.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>All tasks ✅</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests Added</h4>
+                        <p>524 total (+67)</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#14 Scheduled Posting Web UI</strong> — /schedule page with form, queue table, pending/published/failed filters</li>
+                    <li class="done"><strong>#15 Analytics Web UI</strong> — /analytics with Chart.js bar chart, language breakdown, top failures</li>
+                    <li class="done"><strong>#16 analytics.py</strong> — get_stats / get_language_breakdown / get_trends / get_top_failures modules</li>
+                    <li class="done"><strong>#26 Parallel Broadcasting</strong> — asyncio.gather + Semaphore(6), ~6x faster publish for 22 chats</li>
+                    <li class="done"><strong>#27 Topic ID Cache</strong> — Module-level in-memory cache, loaded once per process</li>
+                    <li class="done"><strong>#28 Post Templates</strong> — 6 quick templates (announcement, educational, milestone, thread...)</li>
+                    <li class="done"><strong>#29 Multi-Image Support</strong> — Albums up to 10 photos via send_media_group</li>
+                    <li class="done"><strong>#30 PostgreSQL Infrastructure</strong> — db.py with SQLAlchemy, feature-flagged via USE_POSTGRES</li>
+                    <li class="done"><strong>#31 SMTP Magic Links</strong> — web/smtp_mailer.py, fallback to stdout in dev</li>
+                    <li class="done"><strong>#32 Video Broadcast</strong> — send_video support with separate UI block</li>
+                    <li class="done"><strong>#34 Audit Log</strong> — audit_log.py, JSON Lines format, append-only</li>
+                    <li class="done"><strong>Docker</strong> — Dockerfile + docker-compose.yml, single image for bot+web, shared volume</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">Docker</div>
+                    <div class="tech-badge new">docker-compose</div>
+                    <div class="tech-badge new">Chart.js</div>
+                    <div class="tech-badge new">asyncio.gather</div>
+                    <div class="tech-badge new">SQLAlchemy</div>
+                    <div class="tech-badge new">SMTP Mailer</div>
+                    <div class="tech-badge new">Audit Log</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 5 — COMPLETED                                    -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 5: Web UI & Test Infrastructure</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 5 - Web UI & Testing ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    FastAPI web interface for publishing posts, magic link authentication, AI post generation,
+                    community digests, and comprehensive test suite for broadcaster module and web auth.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>Web UI, Auth, 50 tests</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>457 passing</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>web/app.py</strong> — FastAPI application with 17+ endpoints, Jinja2 templates, Alpine.js forms</li>
+                    <li class="done"><strong>web/auth.py</strong> — Magic link authentication, JWT tokens, domain validation (@gosh.sh), user management</li>
+                    <li class="done"><strong>6 HTML Pages</strong> — Login, Publish, Generate, Digests, History, Settings admin panel</li>
+                    <li class="done"><strong>test_broadcaster.py</strong> — 21 comprehensive tests for broadcaster module</li>
+                    <li class="done"><strong>test_web_auth.py</strong> — 29 tests for authentication, JWT, magic links, domain validation</li>
+                    <li class="done"><strong>457/457 Tests Passing</strong> — Full test coverage including 50 new web tests</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech Stack:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">FastAPI</div>
+                    <div class="tech-badge new">Jinja2 Templates</div>
+                    <div class="tech-badge new">Alpine.js</div>
+                    <div class="tech-badge new">httponly Cookies</div>
+                    <div class="tech-badge new">JWT Auth</div>
+                    <div class="tech-badge new">Magic Links</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 4                                                 -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 4: Broadcast Mechanism & Message Splitting</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 4 - Complete ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Complete broadcast mechanism with message splitting for long captions, undo/retry functionality,
+                    and comprehensive test coverage of broadcaster module with 21 new tests.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>All tasks (7/7)</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests Added</h4>
+                        <p>21 broadcaster tests</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered Features:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>broadcaster.py</strong> — Complete multi-chat broadcast with message splitting for captions > 1024 chars</li>
+                    <li class="done"><strong>Undo Mechanism</strong> — /undo_broadcast [ID] deletes from all chats with tracked message IDs</li>
+                    <li class="done"><strong>Retry Logic</strong> — /retry_broadcast retries only failed chats, no duplicates</li>
+                    <li class="done"><strong>Topic Management</strong> — /set_topic, /scan_topics for forum topic routing</li>
+                    <li class="done"><strong>test_broadcaster.py</strong> — 21 comprehensive tests with file I/O mocking and edge cases</li>
+                    <li class="done"><strong>Fixed Message Splitting</strong> — Photo + text when translation > 1024 chars (18 errors → 0)</li>
+                    <li class="done"><strong>457/457 Tests Passing</strong></li>
                 </ul>
 
                 <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🎯 New Commands:</h4>
                 <div style="background: #f7fafc; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 13px; line-height: 1.8;">
-                    <div><strong>/kb</strong> — KB stats</div>
-                    <div><strong>/kb search &lt;query&gt;</strong> — keyword search</div>
-                    <div><strong>/kb ask &lt;question&gt;</strong> — AI answer from KB context</div>
-                    <div><strong>/kb add id | question | answer</strong> — add entry</div>
-                    <div><strong>/kb remove &lt;id&gt;</strong> — delete entry</div>
-                    <div><strong>/sentiment</strong> — community health overview</div>
-                    <div><strong>/sentiment trending [hours]</strong> — trending topics</div>
-                    <div><strong>/sentiment analyze &lt;chat&gt;</strong> — analyze a specific chat</div>
-                    <div><strong>/dashboard</strong> — generate &amp; send HTML dashboard</div>
+                    <div><strong>/set_topic @chat ID</strong> — Set topic ID for a chat</div>
+                    <div><strong>/scan_topics</strong> — Auto-discover topic IDs (requires Telethon SMS)</div>
+                    <div><strong>/broadcast &lt;link&gt;</strong> — Broadcast via link (Telethon)</div>
+                    <div><strong>/undo_broadcast [ID]</strong> — Delete broadcast from all chats</div>
+                    <div><strong>/retry_broadcast &lt;ID&gt;</strong> — Retry only failed chats</div>
                 </div>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 Tech Improvements:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">Message Splitting</div>
+                    <div class="tech-badge new">File I/O Mocking</div>
+                    <div class="tech-badge new">Topic Cache</div>
+                    <div class="tech-badge new">Broadcast Logging</div>
+                    <div class="tech-badge new">Failed Broadcast Tracking</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 3                                                 -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 3: Knowledge Base, Sentiment & Dashboard</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 3 - Complete ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Knowledge base for auto-replies, advanced sentiment analysis with trending topics,
+                    and a community health metrics dashboard. Imported 24 new KB entries from Excel multilingual translations.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>5/5 modules + KB import</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>KB Entries</h4>
+                        <p>36 total (↑24 from Excel)</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered Features:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>knowledge_base.py</strong> — JSON-based FAQ storage with TF-IDF keyword search + Claude AI semantic answers</li>
+                    <li class="done"><strong>sentiment_analyzer.py</strong> — Batch Claude AI sentiment analysis, emotion detection, topic extraction, trend detection</li>
+                    <li class="done"><strong>dashboard.py</strong> — Self-contained HTML dashboard with Chart.js for sentiment, emotions, trends, alerts</li>
+                    <li class="done"><strong>bot.py integration</strong> — 5 new commands: /kb, /sentiment, /dashboard with multilingual support</li>
+                    <li class="done"><strong>~200 New Tests</strong> — test_knowledge_base.py, test_sentiment_analyzer.py, test_dashboard.py, 100% pass rate</li>
+                </ul>
 
                 <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech Stack:</h4>
                 <div class="tech-stack">
@@ -404,7 +787,6 @@
                     <div class="tech-badge new">Chart.js Dashboard</div>
                     <div class="tech-badge new">Topic Extraction</div>
                     <div class="tech-badge new">Trend Detection</div>
-                    <div class="tech-badge new">Alert System</div>
                 </div>
             </div>
         </div>
@@ -442,12 +824,11 @@
                 <ul class="tasks">
                     <li class="done"><strong>Telethon User API</strong> — Read 22-language community chats + send replies as Eugene's personal account</li>
                     <li class="done"><strong>ChatReader.py</strong> — Async message history reader with forum topic support, media classification, and proxy handling</li>
-                    <li class="done"><strong>Claude Chat Digest</strong> — Automatic analysis with 22 message categories (spam, security, bugs, feature requests, sentiment, growth signals)</li>
-                    <li class="done"><strong>Reply Manager</strong> — Claude-generated reply suggestions for 🔴 urgent items with Russian translation for Eugene's UI</li>
+                    <li class="done"><strong>Claude Chat Digest</strong> — Automatic analysis with 22 message categories</li>
+                    <li class="done"><strong>Reply Manager</strong> — Claude-generated reply suggestions for 🔴 urgent items</li>
                     <li class="done"><strong>Approval Flow</strong> — Inline keyboard buttons (✅ Send / ✏️ Edit / ⏭ Skip) with live preview editing</li>
-                    <li class="done"><strong>Language-Aware Replies</strong> — Situations shown in Russian to Eugene, replies sent in community's native language</li>
-                    <li class="done"><strong>Scheduled Daily Digest</strong> — Auto-send to Eugene's DM daily at 05:00 UTC + /digest on-demand command</li>
-                    <li class="done"><strong>177 New Tests</strong> — 100% coverage for reply_manager.py, 88%+ for chat_reader.py, 94% for digest_generator.py</li>
+                    <li class="done"><strong>Scheduled Daily Digest</strong> — Auto-send to Eugene's DM daily at 05:00 UTC</li>
+                    <li class="done"><strong>177 New Tests</strong> — 100% coverage for reply_manager.py, 88%+ for chat_reader.py</li>
                 </ul>
 
                 <h4 style="color: #667eea; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech Stack:</h4>
@@ -459,14 +840,6 @@
                     <div class="tech-badge">UUID generation</div>
                     <div class="tech-badge">Forum topic parsing</div>
                     <div class="tech-badge">Message classification</div>
-                </div>
-
-                <h4 style="color: #667eea; margin-bottom: 10px; margin-top: 20px;">🎯 New Commands:</h4>
-                <div style="background: #f7fafc; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 13px; line-height: 1.8;">
-                    <div><strong>/digest</strong> — Get last 24h digest</div>
-                    <div><strong>/digest week</strong> — Last 7 days</div>
-                    <div><strong>/digest 2026-03-01 2026-03-04</strong> — Date range</div>
-                    <div>Reply suggestions auto-shown after digest generation</div>
                 </div>
             </div>
         </div>
@@ -505,12 +878,10 @@
                     <li class="done"><strong>Telegram Bot v2.0</strong> — Auto-publish posts to TG & Twitter with preview/approval flow</li>
                     <li class="done"><strong>/chat mode</strong> — Direct conversation with Claude AI for strategy, content ideas, advice</li>
                     <li class="done"><strong>/generate & /plan</strong> — Claude AI-powered post generation and content planning</li>
-                    <li class="done"><strong>Post Scheduler</strong> — Schedule posts for delayed publication (1h, 3h, 6h, tomorrow)</li>
+                    <li class="done"><strong>Post Scheduler</strong> — Schedule posts for delayed publication</li>
                     <li class="done"><strong>Multi-language Support</strong> — Auto-translate posts to 24 languages for different TG channels</li>
                     <li class="done"><strong>Post History & Logging</strong> — Track all published posts with timestamps and success/failure status</li>
-                    <li class="done"><strong>Proxy Support</strong> — Built-in SOCKS5/HTTP proxy for regions where Telegram is blocked</li>
-                    <li class="done"><strong>127 Passing Tests</strong> — Full test coverage for config, handlers, publishing, scheduling, translation, content generation</li>
-                    <li class="done"><strong>Russian Setup Guide</strong> — Complete beginner guide for Windows installation and troubleshooting</li>
+                    <li class="done"><strong>127 Passing Tests</strong> — Full test coverage for config, handlers, publishing, scheduling, translation</li>
                 </ul>
 
                 <h4 style="color: #667eea; margin-bottom: 10px; margin-top: 20px;">🛠 Tech Stack:</h4>
@@ -523,51 +894,6 @@
                     <div class="tech-badge">APScheduler</div>
                     <div class="tech-badge">Google Translate API</div>
                 </div>
-
-                <h4 style="color: #667eea; margin-bottom: 10px; margin-top: 20px;">🎯 Quick Commands:</h4>
-                <div style="background: #f7fafc; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 13px; line-height: 1.8;">
-                    <div><strong>/start</strong> — Show bot menu</div>
-                    <div><strong>/chat</strong> — Toggle chat mode (talk to Claude)</div>
-                    <div><strong>/generate topic</strong> — Generate post with Claude</div>
-                    <div><strong>/plan</strong> — Generate content plan</div>
-                    <div><strong>/schedule</strong> — List scheduled posts</div>
-                    <div><strong>/history</strong> — Show recent posts</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- BACKLOG                                                  -->
-        <!-- ═══════════════════════════════════════════════════════ -->
-        <div class="section">
-            <h2>📋 Backlog (Next)</h2>
-
-            <div class="sprint">
-                <h3>
-                    Sprint 4: Twitter/X Integration & Bot Account Replies
-                    <span class="status pending">PENDING</span>
-                </h3>
-                <ul class="tasks">
-                    <li>Fix Twitter API key validation (currently 401 auth error)</li>
-                    <li>Add OAuth 1.0a flow for @ackinackichain account</li>
-                    <li>Enable scheduled X posts with images</li>
-                    <li>Tweet threading support</li>
-                    <li>Bot account reply message batching</li>
-                    <li>Performance optimization for 22-chat digest generation</li>
-                </ul>
-            </div>
-
-            <div class="sprint">
-                <h3>
-                    Sprint 5: Community Management Automation
-                    <span class="status pending">PENDING</span>
-                </h3>
-                <ul class="tasks">
-                    <li>Auto-replies to common questions using Knowledge Base</li>
-                    <li>Real-time translation for all 24 languages</li>
-                    <li>X account management dashboard</li>
-                    <li>DexPress Card promotion campaign (5k pre-order goal)</li>
-                </ul>
             </div>
         </div>
 
@@ -581,17 +907,20 @@
                 <div class="timeline-item done"><strong>bot.py</strong> — Main bot with command handlers, message routing, publishing UI</div>
                 <div class="timeline-item done"><strong>config.py</strong> — Env var loading, API key management, feature flags</div>
                 <div class="timeline-item done"><strong>content_generator.py</strong> — Claude API integration for content + chat</div>
-                <div class="timeline-item done"><strong>publishers.py</strong> — Telegram & Twitter publishing logic</div>
+                <div class="timeline-item done"><strong>publishers.py</strong> — Telegram & Twitter publishing with exponential backoff retry</div>
                 <div class="timeline-item done"><strong>translator.py</strong> — Multi-language translation (24 languages)</div>
-                <div class="timeline-item done"><strong>scheduler.py</strong> — Post scheduling with APScheduler</div>
-                <div class="timeline-item done"><strong>history.py</strong> — Post history and logging</div>
+                <div class="timeline-item done"><strong>scheduler.py</strong> — Post scheduling with APScheduler; worker ticks every 60s</div>
+                <div class="timeline-item done"><strong>broadcaster.py</strong> — Parallel asyncio broadcast to 22 chats (Semaphore 6)</div>
+                <div class="timeline-item done"><strong>analytics.py</strong> — Broadcast stats, language breakdown, trends, top failures</div>
+                <div class="timeline-item done"><strong>audit_log.py</strong> — JSON Lines append-only audit trail</div>
+                <div class="timeline-item done"><strong>db.py</strong> — SQLAlchemy models with indexes (feature-flagged PostgreSQL)</div>
+                <div class="timeline-item done"><strong>web/app.py</strong> — FastAPI 30+ endpoints, rate limiting, batch publish, webhooks</div>
+                <div class="timeline-item done"><strong>web/auth.py</strong> — Magic links + JWT access (15min) + refresh tokens (7 days)</div>
                 <div class="timeline-item done"><strong>chat_reader.py</strong> — Telethon user API client for reading & sending messages</div>
                 <div class="timeline-item done"><strong>digest_generator.py</strong> — Claude AI analysis with 22 message categories</div>
-                <div class="timeline-item done"><strong>reply_manager.py</strong> — Smart reply suggestions with language translation</div>
-                <div class="timeline-item wip"><strong>knowledge_base.py</strong> — 🆕 FAQ search engine + Claude AI semantic answers</div>
-                <div class="timeline-item wip"><strong>sentiment_analyzer.py</strong> — 🆕 Sentiment tracking, emotion detection, trending topics</div>
-                <div class="timeline-item wip"><strong>dashboard.py</strong> — 🆕 Self-contained HTML dashboard with Chart.js</div>
-                <div class="timeline-item done"><strong>tests/</strong> — 500+ comprehensive tests across all modules</div>
+                <div class="timeline-item done"><strong>knowledge_base.py</strong> — FAQ search engine + Claude AI semantic answers</div>
+                <div class="timeline-item done"><strong>sentiment_analyzer.py</strong> — Sentiment tracking, emotion detection, trending topics</div>
+                <div class="timeline-item done"><strong>tests/</strong> — 538 comprehensive tests across all modules</div>
             </div>
         </div>
 
@@ -603,15 +932,15 @@
 
             <ul class="tasks">
                 <li class="done"><strong>Zero-to-Production</strong> — Built and deployed working bot in single sprint</li>
-                <li class="done"><strong>Test-Driven Development</strong> — 500+ tests with 100% pass rate</li>
-                <li class="done"><strong>Multi-Language at Scale</strong> — Support for 24 Telegram communities in different languages</li>
+                <li class="done"><strong>Test-Driven Development</strong> — 538 tests with 100% pass rate</li>
+                <li class="done"><strong>Multi-Language at Scale</strong> — Support for 22 Telegram communities in different languages</li>
                 <li class="done"><strong>Human-in-the-Loop</strong> — Preview-and-approve flow prevents accidental posts</li>
-                <li class="done"><strong>Regional Resilience</strong> — Built-in proxy support for blocked networks (Russia)</li>
                 <li class="done"><strong>Knowledge Base</strong> — Self-building FAQ with AI-powered semantic search</li>
                 <li class="done"><strong>Sentiment Intelligence</strong> — Real-time mood tracking across 22 communities</li>
-                <li class="done"><strong>Live Dashboard</strong> — Interactive HTML dashboard, no external service needed</li>
+                <li class="done"><strong>Production Security</strong> — Rate limiting, refresh tokens, audit log, retry logic</li>
+                <li class="done"><strong>Docker Ready</strong> — docker-compose for bot + web, shared volume, healthcheck</li>
+                <li class="done"><strong>Webhook Intake</strong> — External sources (RSS/Zapier/API) → immediate or scheduled publish</li>
                 <li class="done"><strong>AI Integration</strong> — Seamless Claude AI for content, chat, digest, sentiment, KB answers</li>
-                <li class="done"><strong>Production Ready</strong> — Logging, error handling, graceful degradation throughout</li>
             </ul>
         </div>
 
@@ -624,11 +953,11 @@
             <div class="stats">
                 <div class="stat-box done">
                     <h4>Lines of Code</h4>
-                    <p>~6500</p>
+                    <p>~9000</p>
                 </div>
                 <div class="stat-box done">
-                    <h4>Test Coverage</h4>
-                    <p>500+ tests (85%+ coverage)</p>
+                    <h4>Tests Passing</h4>
+                    <p>538 (100%)</p>
                 </div>
                 <div class="stat-box done">
                     <h4>API Integrations</h4>
@@ -638,20 +967,20 @@
                     <h4>Community Chats</h4>
                     <p>22 languages monitored</p>
                 </div>
-                <div class="stat-box wip">
-                    <h4>New Modules (Sprint 3)</h4>
-                    <p>3 (KB, Sentiment, Dashboard)</p>
+                <div class="stat-box done">
+                    <h4>Web Endpoints</h4>
+                    <p>30+ (API + pages)</p>
                 </div>
-                <div class="stat-box wip">
-                    <h4>KB Entries (default)</h4>
-                    <p>12 Acki Nacki FAQ</p>
+                <div class="stat-box done">
+                    <h4>Sprints Completed</h4>
+                    <p>9 of 10 planned ✅</p>
                 </div>
             </div>
         </div>
 
         <footer>
             <p>Community AI — Building AI-powered community management for Acki Nacki blockchain 🚀</p>
-            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 4, 2026 | Sprint 3 In Progress</p>
+            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 10, 2026 | Sprint 9 Complete (Topic Routing, Bot Resilience) → Sprint 10 In Progress (RAG, Custom Chat Analysis, Security Hardening)</p>
         </footer>
     </div>
 </body>
