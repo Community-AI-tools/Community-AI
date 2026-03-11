@@ -329,36 +329,36 @@
         <div class="info-bar">
             <div class="info-item">
                 <h3>Current Sprint</h3>
-                <p>Sprint 11</p>
+                <p>Sprint 14</p>
             </div>
             <div class="info-item">
                 <h3>Tests</h3>
-                <p>520 passing</p>
+                <p>~1262 passing</p>
             </div>
             <div class="info-item">
                 <h3>Status</h3>
-                <p>Sprint 10 Complete</p>
+                <p>Sprint 13 Complete</p>
             </div>
             <div class="info-item">
                 <h3>Last Updated</h3>
-                <p>Mar 10, 2026</p>
+                <p>Mar 11, 2026</p>
             </div>
         </div>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- SPRINT 11 — CURRENT                                     -->
+        <!-- SPRINT 14 — CURRENT                                     -->
         <!-- ═══════════════════════════════════════════════════════ -->
         <div class="section">
-            <h2>📅 Sprint 11: Acki Nacki Brain, SMM Tools & Infrastructure (In Progress)</h2>
+            <h2>📅 Sprint 14: Acki Nacki Brain & UI Polish (In Progress)</h2>
 
             <div class="sprint active">
                 <h3>
-                    Sprint 11 - Acki Nacki Brain, SMM Tools & Infrastructure
+                    Sprint 14 - Acki Nacki Brain & UI Polish
                     <span class="status active">IN PROGRESS</span>
                 </h3>
                 <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
-                    Build Acki Nacki knowledge base with prompt caching, launch SMM tools suite, implement hybrid search (BM25 + embeddings),
-                    and add circuit breaker pattern for API resilience.
+                    Build the Acki Nacki Brain knowledge system (docs/whitepaper → structured KB → RAG), fix remaining UI issues
+                    (QA button, personal channel connect, light mode), and continue platform growth.
                 </p>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 5%"></div>
@@ -371,18 +371,181 @@
                     </div>
                     <div class="stat-box wip">
                         <h4>Baseline Tests</h4>
-                        <p>520 passing</p>
+                        <p>~1262 passing</p>
                     </div>
                 </div>
 
                 <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">⚡ Planned Tasks:</h4>
                 <ul class="tasks">
-                    <li>→ <strong>#68 Acki Nacki Brain</strong> — Collect docs/whitepaper/blog → structured JSON KB → prompt caching → RAG integration</li>
-                    <li>→ <strong>#61 SMM Tools</strong> — New /smm-tools section: ToV analysis, content calendar, competitor analysis, post series generator</li>
-                    <li>→ <strong>#75 Hybrid Search</strong> — BM25 + sentence-transformers (multilingual-MiniLM) + chromadb for KB</li>
-                    <li>→ <strong>#77 Circuit Breaker</strong> — Auto-disable on error series (Telegram/Twitter/Claude API) with exponential backoff</li>
-                    <li>→ <strong>#76 Prompt Caching</strong> — Cache system prompts for RAG/digests to reduce API costs by 90%</li>
+                    <li>→ <strong>#68 Acki Nacki Brain</strong> — docs/whitepaper/blog → structured JSON KB → prompt caching → RAG Q&A integration</li>
+                    <li>→ <strong>QA / Knowledge Base button</strong> — Fix /api/qa/ask endpoint, better error UX when Claude API not configured</li>
+                    <li>→ <strong>Personal channel connect</strong> — UI for connecting personal Telegram/Twitter accounts in personal_channel.html</li>
+                    <li>→ <strong>Light mode CSS</strong> — Complete light theme support (blockchain CSS currently always dark)</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 13 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 13: Vector DB, Platform Features, Testing & UI Overhaul</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 13 - Vector DB, Platform Features, Testing & UI Overhaul ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Migrated KB to vector DB, launched multi-org/segmentation/A/B/RSS/Mini App/activity scoring/multi-platform analytics,
+                    added E2E + load testing, built audit log Web UI, and overhauled the entire frontend with a Blockchain/Web3 aesthetic.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>11 tasks + UI</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>~158 new ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#80 Vector DB для KB</strong> — Миграция с JSON на chromadb/pgvector, semantic search + metadata filtering</li>
+                    <li class="done"><strong>#57 Multi-org support</strong> — Несколько брендов в одном instance, organizations.py</li>
+                    <li class="done"><strong>#58 Advanced segmentation</strong> — Целевые рассылки по языкам и активности, segmentation.py</li>
+                    <li class="done"><strong>#59 A/B testing</strong> — Разные варианты поста для % аудитории, ab_testing.py</li>
+                    <li class="done"><strong>#81 RSS/Webhook publisher</strong> — Автопубликация при новом посте в блоге/RSS, rss_publisher.py</li>
+                    <li class="done"><strong>#82 Telegram Mini App</strong> — Web UI как Mini App внутри Telegram, mini_app.py</li>
+                    <li class="done"><strong>#83 User activity scoring</strong> — Рейтинг участников с временным затуханием, activity_scoring.py</li>
+                    <li class="done"><strong>#84 Multi-platform analytics</strong> — Единый dashboard TG + Twitter + Discord, platform_analytics.py</li>
+                    <li class="done"><strong>#53 E2E тесты (Playwright)</strong> — End-to-end тесты для Web UI: publish, auth, analytics, SMM</li>
+                    <li class="done"><strong>#54 Load testing (Locust)</strong> — Нагрузочное тестирование API: 50 concurrent users, SLA проверки</li>
+                    <li class="done"><strong>#37 Web UI для audit log</strong> — web/audit.py + audit.html: фильтры, CSV-экспорт, 43 теста; исправлен баг с user-as-dict</li>
+                    <li class="done"><strong>Blockchain/Web3 UI redesign</strong> — Полный редизайн frontend: glassmorphism, neon CSS vars, анимированная сетка, .nav-main, .glass-card, .btn-neon</li>
+                    <li class="done"><strong>UI Bug Fixes</strong> — Nav hover gap fix (CSS bridge), SMM Tools landing cards, Digests landing cards, unified media upload (1 dialog), analytics loading fix (try/finally), Onboarding убран из nav</li>
+                    <li class="done"><strong>test_dark_mode.py обновлён</strong> — 115 тестов адаптированы под blockchain always-dark архитектуру (main .bg-white, .nav-main, CSS vars)</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">chromadb / pgvector</div>
+                    <div class="tech-badge new">Playwright (E2E)</div>
+                    <div class="tech-badge new">Locust (load test)</div>
+                    <div class="tech-badge new">Blockchain CSS aesthetic</div>
+                    <div class="tech-badge new">Alpine.js landing patterns</div>
+                    <div class="tech-badge new">CSS :before hover bridge</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 12 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 12: EOKA Integration & Dark Mode</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 12 - EOKA Integration & Dark Mode ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Researched and integrated EOKA Rust microservice for Twitter automation without paid API,
+                    implemented full dark mode across all 16 web templates with CSS cascade approach.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>3 tasks</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>169 new ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#81 EOKA Research</strong> — Исследование EOKA API, проектирование архитектуры Python wrapper и Docker-интеграции</li>
+                    <li class="done"><strong>#85 EOKA Microservice</strong> — Rust HTTP proxy (Actix-web + headless_chrome), eoka_client.py async wrapper, Docker-сервис в docker-compose.yml (55 tests)</li>
+                    <li class="done"><strong>#35 Dark Mode</strong> — Полная поддержка во всех 16 шаблонах: CSS cascade через .dark class, localStorage persistence, prefers-color-scheme detection, login.html и onboarding.html standalone pages (114 tests)</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">EOKA (Rust)</div>
+                    <div class="tech-badge new">Actix-web</div>
+                    <div class="tech-badge new">headless_chrome</div>
+                    <div class="tech-badge new">CSS Dark Mode Cascade</div>
+                    <div class="tech-badge new">prefers-color-scheme</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 11 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 11: SMM Tools, Hybrid Search & Infrastructure</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 11 - SMM Tools, Hybrid Search & Infrastructure ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Launched SMM tools suite, implemented hybrid KB search (BM25 + embeddings), centralized Claude API with prompt caching,
+                    added circuit breaker pattern, personal channel content generation, Prometheus metrics, Telethon message caching, and API versioning.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>8 tasks</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>321 new ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#61 SMM Tools</strong> — /smm-tools page: ToV analysis, competitor analysis, content plan calendar, post series generator (web/smm_tools.py, 61 tests)</li>
+                    <li class="done"><strong>#75 Hybrid KB Search</strong> — BM25 + sentence-transformers (multilingual-MiniLM) + chromadb. Cross-language search for AI Q&A (hybrid_search.py, 39 tests)</li>
+                    <li class="done"><strong>#76 Claude Prompt Caching</strong> — Centralized claude_client.py with singleton client, cache_control: ephemeral on system prompts, ~90% token savings. Migrated 9 modules (31 tests)</li>
+                    <li class="done"><strong>#77 Circuit Breaker</strong> — circuit_breaker.py: CLOSED→OPEN→HALF_OPEN state machine, sync+async support, global registry, integrated with Claude API (32 tests)</li>
+                    <li class="done"><strong>#69 Personal TG + Twitter Channel</strong> — personal_channel.py: content generation (tip/insight/progress/thread/digest), dual TG+Twitter output, content queue, web UI (36 tests)</li>
+                    <li class="done"><strong>#51 Prometheus Metrics</strong> — Extended web/metrics.py: Claude API tokens/latency/cache, content generation, KB search, personal channel, circuit breaker — 17 new Prometheus metrics (57 tests)</li>
+                    <li class="done"><strong>#49 Telethon Message Caching</strong> — message_cache.py: JSON file cache + LRU in-memory layer, 30-day TTL, merge-on-put, cached_read_chat() integration (37 tests)</li>
+                    <li class="done"><strong>#78 API Versioning</strong> — web/api_version.py: /api/v1/ prefix via APIRouter, X-API-Version header middleware, legacy redirect support, /api/v1/version endpoint (28 tests)</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">sentence-transformers</div>
+                    <div class="tech-badge new">chromadb</div>
+                    <div class="tech-badge new">rank_bm25</div>
+                    <div class="tech-badge new">Circuit Breaker Pattern</div>
+                    <div class="tech-badge new">Prompt Caching</div>
+                    <div class="tech-badge new">Prometheus Metrics</div>
+                    <div class="tech-badge new">API Versioning (v1)</div>
+                    <div class="tech-badge new">LRU Message Cache</div>
+                </div>
             </div>
         </div>
 
@@ -1037,7 +1200,7 @@
 
         <footer>
             <p>Community AI — Building AI-powered community management for Acki Nacki blockchain 🚀</p>
-            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 10, 2026 | Sprint 10 Complete (Engagement, Digests, Security) → Sprint 11 In Progress (Acki Nacki Brain, SMM Tools, Infrastructure)</p>
+            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 11, 2026 | Sprint 13 Complete (Vector DB, Platform Features, Testing, Blockchain UI) → Sprint 14 In Progress (Acki Nacki Brain, UI Polish)</p>
         </footer>
     </div>
 </body>
