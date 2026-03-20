@@ -329,59 +329,466 @@
         <div class="info-bar">
             <div class="info-item">
                 <h3>Current Sprint</h3>
-                <p>Sprint 14</p>
+                <p>Sprint 23</p>
             </div>
             <div class="info-item">
                 <h3>Tests</h3>
-                <p>~1262 passing</p>
+                <p>5126 passing</p>
             </div>
             <div class="info-item">
                 <h3>Status</h3>
-                <p>Sprint 13 Complete</p>
+                <p>Sprint 22 Complete</p>
             </div>
             <div class="info-item">
                 <h3>Last Updated</h3>
-                <p>Mar 11, 2026</p>
+                <p>Mar 20, 2026</p>
             </div>
         </div>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- SPRINT 14 — CURRENT                                     -->
+        <!-- SPRINT 23 — CURRENT                                     -->
         <!-- ═══════════════════════════════════════════════════════ -->
         <div class="section">
-            <h2>📅 Sprint 14: Acki Nacki Brain & UI Polish (In Progress)</h2>
+            <h2>📅 Sprint 23: SMM Tools 5 — Auto-reply Stats + Games + User Guide (In Progress)</h2>
 
             <div class="sprint active">
                 <h3>
-                    Sprint 14 - Acki Nacki Brain & UI Polish
+                    Sprint 23 — SMM Tools 5: Auto-reply Monitoring + Games Integration
                     <span class="status active">IN PROGRESS</span>
                 </h3>
                 <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
-                    Build the Acki Nacki Brain knowledge system (docs/whitepaper → structured KB → RAG), fix remaining UI issues
-                    (QA button, personal channel connect, light mode), and continue platform growth.
+                    Auto-reply statistics module with persistent JSON storage, FastAPI monitoring dashboard,
+                    interactive game handlers wired into bot.py (/bomb, /guess, /truth), game rotation scheduler,
+                    and comprehensive USER_GUIDE.md. Fixed 10+ stale tests after LLM chain migration.
                 </p>
                 <div class="progress-bar">
-                    <div class="progress-fill" style="width: 5%"></div>
+                    <div class="progress-fill" style="width: 95%"></div>
                 </div>
 
                 <div class="stats">
                     <div class="stat-box wip">
                         <h4>Status</h4>
-                        <p>Planning phase</p>
+                        <p>Deployed</p>
                     </div>
                     <div class="stat-box wip">
-                        <h4>Baseline Tests</h4>
-                        <p>~1262 passing</p>
+                        <h4>Tests</h4>
+                        <p>5126 passing</p>
                     </div>
                 </div>
 
-                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">⚡ Planned Tasks:</h4>
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">⚡ Delivered Tasks:</h4>
                 <ul class="tasks">
-                    <li>→ <strong>#68 Acki Nacki Brain</strong> — docs/whitepaper/blog → structured JSON KB → prompt caching → RAG Q&A integration</li>
-                    <li>→ <strong>QA / Knowledge Base button</strong> — Fix /api/qa/ask endpoint, better error UX when Claude API not configured</li>
-                    <li>→ <strong>Personal channel connect</strong> — UI for connecting personal Telegram/Twitter accounts in personal_channel.html</li>
-                    <li>→ <strong>Light mode CSS</strong> — Complete light theme support (blockchain CSS currently always dark)</li>
+                    <li>→ <strong>#132 auto_reply_stats.py</strong> — persistent JSON stats: total questions, bot vs human answered, top-50 questions (dedup by prefix), per-chat breakdown. Fixed deepcopy bug (shallow copy mutated shared _EMPTY_STATS). 26 tests.</li>
+                    <li>→ <strong>#132 auto_reply_routes.py</strong> — FastAPI router: GET /auto-reply (HTML dashboard), GET /api/auto-reply/stats (JSON), POST /api/auto-reply/reset. XSS-safe HTML rendering. 23 tests.</li>
+                    <li>→ <strong>#132 web/app.py wired</strong> — auto_reply_routes.router included in FastAPI app for live monitoring.</li>
+                    <li>→ <strong>#134–#136 Games wired into bot.py</strong> — register_game_handlers(app) wires /bomb, /pass, /guess, /truth into the Telegram bot.</li>
+                    <li>→ <strong>#143 Game rotation scheduler</strong> — run_game_rotation_job added to bot.py job_queue (every 3h, random first=60–600s stagger).</li>
+                    <li>→ <strong>USER_GUIDE.md</strong> — full user guide: режимы работы, личный бот, auto-reply env vars, игры, авто-контент schedule, все команды, деплой.</li>
+                    <li>→ <strong>Test fixes</strong> — 10+ stale tests in test_engagement.py and test_translator.py updated for LLM chain migration (llm_create vs cached_create, groq default mode).</li>
                 </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">copy.deepcopy</div>
+                    <div class="tech-badge new">auto_reply_stats</div>
+                    <div class="tech-badge new">game rotation job</div>
+                    <div class="tech-badge new">XSS-safe dashboard</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 22 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>✅ Sprint 22: AI Support Triage (Complete)</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 22 — AI Support Triage ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Implemented #126 AI Support Triage (Pro tier) — support_triage.py with TG/Discord ingestion,
+                    KB semantic search auto-response, escalation queue, ticket history, and a full support metrics
+                    dashboard. 66 new tests. Completed Mar 17, 2026.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>1 task</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>5077 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#126 support_triage.py</strong> — Telegram/Discord message ingestion, KB-based semantic search auto-response, escalation queue with full context, ticket history</li>
+                    <li class="done"><strong>#126 support_routes.py + support.html</strong> — ticket queue panel, escalation view, metrics cards (% auto-answered, avg response time, top issues)</li>
+                    <li class="done"><strong>#126 Tests</strong> — 66 business-logic tests: routing accuracy, KB match threshold, escalation triggers, CSAT tracking</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">support_triage</div>
+                    <div class="tech-badge new">escalation queue</div>
+                    <div class="tech-badge new">KB semantic search</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 21 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>✅ Sprint 21: Community Health Dashboard &amp; Competitor Monitoring (Complete)</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 21 — Community Health Dashboard &amp; Competitor Monitoring ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Built Community Health Dashboard (Health Index 0–100, dead accounts, lifecycle stages),
+                    Churn Predictor with 2-week horizon, and upgraded Competitor Monitoring with spike detection
+                    and side-by-side comparison dashboard. Completed Mar 17, 2026.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>3 tasks / +88 tests</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>5011 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#123 Community Health Dashboard</strong> — community_health.py (Health Index 0–100, dead accounts 30+ days, activity heatmap, lifecycle stages, CSV export) + 9 API endpoints + responsive UI; 35 tests</li>
+                    <li class="done"><strong>#124 Churn Predictor</strong> — churn_predictor.py (logistic scoring model, feature engineering, 2-week churn horizon, suggested re-engagement actions) + 4 API endpoints + funnel UI with progress bars; 47 tests</li>
+                    <li class="done"><strong>#125 Competitor Monitoring upgrade</strong> — detect_spikes() function (2× follower/engagement threshold), 2 new API endpoints (/spikes, /comparison), full benchmarks.html redesign: spike alerts banner, side-by-side comparison table, rank cards (Alpine.js); +6 tests</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">logistic scoring (churn probability)</div>
+                    <div class="tech-badge new">spike detection (ratio × baseline)</div>
+                    <div class="tech-badge new">lifecycle funnel (active→churned)</div>
+                    <div class="tech-badge new">StreamingResponse (CSV export)</div>
+                    <div class="tech-badge new">BackgroundTasks (async analysis)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 20 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>✅ Sprint 20: Broadcast Post Editing with Dual Translation (Complete)</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 20 — Broadcast Post Editing with Dual Translation ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Added ability to edit already-published Telegram broadcast messages from both web UI and Telegram bot.
+                    Supports two translation backends (Google/Claude) with per-chat re-translation, media caption fallback,
+                    and forwarded-message detection in the bot. Completed Mar 15, 2026.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>4 modules / +155 tests</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>4923 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>post_editor.py (new)</strong> — edit_broadcast() with text/caption fallback, per-chat retranslation, Semaphore(2) for Claude / (4) for Google; find_broadcast_by_message() for reverse lookup</li>
+                    <li class="done"><strong>POST /api/broadcasts/{id}/edit (web)</strong> — accepts {text, translation_mode: none|google|claude}, returns {edited, failed, detail}; audit log integration</li>
+                    <li class="done"><strong>Bot UX — forwarded message detection</strong> — when admin forwards a broadcast message to bot, shows ✏️ Редактировать + 📡 Разослать заново buttons</li>
+                    <li class="done"><strong>Bot UX — 3-button translation selector</strong> — [🚫 Без перевода] [🌐 Google] [🤖 Claude] with active state indicator (✅), /edit_broadcast command</li>
+                    <li class="done"><strong>test_post_editor.py (51 tests, 100% coverage)</strong> — full suite: rich/legacy log formats, media fallback, translation modes, web endpoint, bot callbacks</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">asyncio.Semaphore (rate-limit Claude 2 rps)</div>
+                    <div class="tech-badge new">MessageOriginChannel (forwarded msg detection)</div>
+                    <div class="tech-badge new">edit_message_caption() fallback (media msgs)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 19 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>✅ Sprint 19: Animated Emoji & Post Mirroring (Complete)</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 19 — Animated Emoji &amp; Post Mirroring ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Implemented PostX competitor analysis items: custom animated Telegram emoji support and automatic
+                    cross-platform post mirroring. Completed Mar 14, 2026.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>2 tasks / +107 tests</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>4768 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#121 Custom Animated Emoji (Telegram)</strong> — tg_custom_emoji.py + tg_custom_emoji_routes.py + publishers.py extended; 39 tests</li>
+                    <li class="done"><strong>#122 Auto Post Mirror</strong> — post_mirror.py + post_mirror_routes.py; cross-platform automatic mirroring with format adaptation; 68 tests</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">Telegram Custom Emoji API</div>
+                    <div class="tech-badge new">Cross-platform post mirroring</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 18 — CURRENT                                     -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>✅ Sprint 18: Code Review &amp; Quality Hardening (Complete)</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 18 — Code Review &amp; Quality Hardening ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Full code review of all 11 Sprint 17 modules: fixed critical TypeError crash, cleaned dead code and unused imports,
+                    boosted SEO coverage 65%→98%, added atomic JSON writes + threading locks to all 11 modules,
+                    fixed ID collision bugs, implemented cascade tag deletion, and added 17 new targeted tests.
+                    Completed Mar 12, 2026.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>12 fixes / 17 new tests</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>4661 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>P1 — BUG-1 review_management.py</strong> — Fixed TypeError crash in _check_alerts() when alert value is None; wrapped float(value) in try/except</li>
+                    <li class="done"><strong>P2 — Dead variables removed</strong> — Deleted unused encoded (seo_keyword_integration) and boost_ids (ad_boost); removed unused imports from 6 modules</li>
+                    <li class="done"><strong>P2 — SEO coverage 65%→98%</strong> — Added 10 XML-parsing tests for _fetch_google_trends() and get_trending_topics() using monkeypatched RSS responses</li>
+                    <li class="done"><strong>P3 — Pillow DeprecationWarning fixed</strong> — media_editor.py: img.getdata() → img.get_flattened_data() for Pillow 13+ compatibility</li>
+                    <li class="done"><strong>P3 — Negative follower validation</strong> — audience_growth_analytics.record_snapshot() now raises ValueError for negative counts</li>
+                    <li class="done"><strong>P3 — Platform validation in employee_advocacy</strong> — record_share() now validates platform against VALID_PLATFORMS set</li>
+                    <li class="done"><strong>P3 — Cascade deletion implemented</strong> — campaign_tagging.delete_tag() now recursively removes all descendant tags; 3 cascade tests added</li>
+                    <li class="done"><strong>P4 — Atomic JSON writes (all 11 modules)</strong> — Replaced direct write_text() with tempfile.NamedTemporaryFile + os.replace() pattern</li>
+                    <li class="done"><strong>P4 — Thread-safety locks (all 11 modules)</strong> — threading.Lock() wrapping all _load→modify→_save sequences</li>
+                    <li class="done"><strong>P4 — ID collision fix (campaign_tagging, ad_boost, crm_integration)</strong> — _generate_id() now appends uuid4().hex[:6] suffix to millisecond timestamp</li>
+                    <li class="done"><strong>P4 — len()-based IDs replaced (pwa_manager × 5, social_commerce × 2)</strong> — All 7 places now use timestamp_ms + uuid6 pattern</li>
+                    <li class="done"><strong>Alert edge case tests × 4</strong> — Added None value, non-numeric value, keyword match, and rating-not-triggered tests for review_management</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">tempfile + os.replace() (atomic writes)</div>
+                    <div class="tech-badge new">threading.Lock() (11 modules)</div>
+                    <div class="tech-badge new">uuid4 ID suffix (collision prevention)</div>
+                    <div class="tech-badge new">img.get_flattened_data() (Pillow 13+)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 16 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>✅ Sprint 16: Discord & YouTube Integrations (Complete) | ✅ Sprint 17: Nice-to-Have Features (Complete)</h2>
+
+            <div class="sprint completed" style="margin-bottom: 20px;">
+                <h3>
+                    Sprint 17 — Nice-to-Have Features (#100–#120)
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    All 12 nice-to-have backlog items implemented: Social Chatbot Builder (#100), SEO Keyword Integration (#102),
+                    Image/Video Editor (#103), Social Proof Collector (#104), Audience Growth Analytics (#105),
+                    Review Management (#114), Social Commerce (#115), Employee Advocacy (#116), PWA/Mobile App (#117),
+                    Ad Boost (#118), CRM Integration (#119), Campaign Tagging (#120).
+                    +451 new tests (4240 → 4691 passing). Completed Mar 11, 2026.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 16 - Discord &amp; YouTube Integrations ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Added Discord publishing with rich embeds and YouTube/Shorts auto-publishing, expanding the platform footprint beyond Telegram and Twitter.
+                    19 competitive gaps + 5 bonus tasks completed (4240 tests passing). Completed Mar 11, 2026.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 15 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 15: Testing, Audit & Refactoring</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 15 - Testing, Audit & Refactoring ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Massive refactoring of bot.py (3054→285 lines) and web/app.py (2512→181 lines) into modular routers,
+                    471 new unit tests across 9 critical modules, E2E testing with Playwright, load testing with Locust,
+                    audit log web UI, fixed 104 pre-existing test failures, and HTML/Markdown rendering in all AI output fields.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>7 tasks (3 planned + 4 bonus)</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>3099 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#53 E2E тесты (Playwright)</strong> — 13 тестовых файлов, ~297 сценариев: auth, dashboard, publish, analytics, qa, schedule, settings, history, audit, digests, engagement, smm_tools</li>
+                    <li class="done"><strong>#54 Load testing (Locust)</strong> — 4 класса пользователей, 40+ задач, DataGenerator/PayloadBuilder/ResponseValidator хелперы, 37 тестов</li>
+                    <li class="done"><strong>#37 Web UI для audit log</strong> — Dark mode, 4 stats карточки, фильтры по дате/юзеру/действию/статусу, модалка деталей с raw JSON, пагинация</li>
+                    <li class="done"><strong>Рефакторинг bot.py</strong> — 3054→285 строк, вынесено в bot_handlers/ (10 модулей: state, helpers, commands, content, digest, knowledge, broadcast, engagement, messages, publishing)</li>
+                    <li class="done"><strong>Рефакторинг web/app.py</strong> — 2512→181 строк, вынесено в web/routers/ (16 модулей: auth, publish, analytics, schedule, digest, admin, qa, webhook, smm, integration, onboarding, audit, main, engagement, _helpers)</li>
+                    <li class="done"><strong>471 новых unit тестов</strong> — Покрытие 9 критических модулей: engagement (116), web/auth (84), web/security (115), db (24), digest_schedule (33), web/audit (32), web/notifications (21), smtp_mailer (21), tg_notify (25)</li>
+                    <li class="done"><strong>104 pre-existing failures исправлены</strong> — Фиксы: anthropic mock paths, tweepy mocks (sys.modules), metrics fallback stubs, router patching, cross-test contamination, flaky assertions</li>
+                    <li class="done"><strong>HTML/Markdown rendering</strong> — window.mdToHtml глобально в base.html, x-html в publish/generate/smm_tools/youtube/digests для корректного рендера AI-вывода</li>
+                    <li class="done"><strong>Telegram Pool timeout fix</strong> — HTTPXRequest(pool=32) + initialize()/shutdown() во всех Bot() точках: publish_routes.py (3 места) + webhook_routes.py</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">Playwright E2E</div>
+                    <div class="tech-badge new">Locust Load Testing</div>
+                    <div class="tech-badge new">HTTPXRequest pool=32</div>
+                    <div class="tech-badge new">window.mdToHtml</div>
+                    <div class="tech-badge new">bot_handlers/ (10 modules)</div>
+                    <div class="tech-badge new">web/routers/ (16 modules)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- SPRINT 14 — COMPLETED                                   -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="section">
+            <h2>📅 Sprint 14: Acki Nacki Brain & UI Polish</h2>
+
+            <div class="sprint completed">
+                <h3>
+                    Sprint 14 - Acki Nacki Brain & UI Polish ✓
+                    <span class="status completed">DONE</span>
+                </h3>
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                    Built the Acki Nacki Brain RAG system (134 KB entries, BM25 + Claude hybrid search with prompt caching),
+                    fixed QA page UX, added full light mode support, user activity scoring with decay, and multi-platform analytics.
+                    Switched default translation from Google Translate to Claude API.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box done">
+                        <h4>Completed</h4>
+                        <p>5 tasks + 3 bonus</p>
+                    </div>
+                    <div class="stat-box done">
+                        <h4>Tests</h4>
+                        <p>1942 passing ✅</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #48bb78; margin-bottom: 10px; margin-top: 20px;">✓ Delivered:</h4>
+                <ul class="tasks">
+                    <li class="done"><strong>#68 Acki Nacki Brain</strong> — 134-entry JSON KB from docs.ackinacki.com, BM25 + Claude hybrid RAG with prompt caching, acki_nacki_brain.py (309 lines) + 81 tests</li>
+                    <li class="done"><strong>#86 Fix QA-кнопки</strong> — Rewrote /api/qa/ask to use AckiNackiBrain with BM25 fallback, mode/cached badges, 8 quick questions, 13 languages, 83 tests</li>
+                    <li class="done"><strong>#87 Light mode CSS</strong> — CSS variables for both themes, all dark overrides scoped to .dark selector, transitions, light-mode nav/forms/code/scrollbar, 46 tests</li>
+                    <li class="done"><strong>#83 User activity scoring</strong> — ActivityScoringEngine with exponential time decay, streaks, badges, levels, leaderboard, persistence, 67 tests</li>
+                    <li class="done"><strong>#84 Multi-platform analytics</strong> — PlatformAnalytics integrated into broadcast/twitter/discord flows, 3 new API endpoints, dashboard widget, 51 tests</li>
+                    <li class="done"><strong>Claude translation default</strong> — Switched translation_mode from Google to Claude across translator.py → broadcaster.py → bot.py with Google fallback</li>
+                    <li class="done"><strong>read_private_chats.py</strong> — Fixed auto-detection (scoring + supergroup preference) and Windows filename sanitization</li>
+                </ul>
+
+                <h4 style="color: #ed8936; margin-bottom: 10px; margin-top: 20px;">🛠 New Tech:</h4>
+                <div class="tech-stack">
+                    <div class="tech-badge new">AckiNackiBrain RAG</div>
+                    <div class="tech-badge new">BM25 Search</div>
+                    <div class="tech-badge new">Claude Prompt Caching</div>
+                    <div class="tech-badge new">CSS Custom Properties</div>
+                    <div class="tech-badge new">PlatformAnalytics</div>
+                    <div class="tech-badge new">Claude Translation</div>
+                </div>
             </div>
         </div>
 
@@ -1193,14 +1600,14 @@
                 </div>
                 <div class="stat-box done">
                     <h4>Sprints Completed</h4>
-                    <p>9 of 10 planned ✅</p>
+                    <p>10 of 10 planned ✅</p>
                 </div>
             </div>
         </div>
 
         <footer>
             <p>Community AI — Building AI-powered community management for Acki Nacki blockchain 🚀</p>
-            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 11, 2026 | Sprint 13 Complete (Vector DB, Platform Features, Testing, Blockchain UI) → Sprint 14 In Progress (Acki Nacki Brain, UI Polish)</p>
+            <p style="margin-top: 10px; opacity: 0.6;">Last updated: March 20, 2026 | Sprint 22 Complete → AI Support Triage (5077 tests) → Sprint 23 In Progress: Auto-reply Stats + Games + User Guide</p>
         </footer>
     </div>
 </body>
